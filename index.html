@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lab Ngày 5 — Checkpoint bài làm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/serif.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/theme.css">
+</head>
+<body class="tidy vz">
+
+<!-- Each stage slide: a time pill with one task sentence, a diagram, a "Nhớ" box and a "Xong khi" / milestone box.
+     Official terms of the lab brief are kept and glossed once. What to say out loud lives in each slide's
+     <aside class="sn">, shown only in the presenter window (key P). -->
+
+<!-- icons -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+</svg>
+
+<!-- ========== COVER ========== -->
+<section class="slide cover nochrome">
+  <div class="l">
+    <div class="top"><img src="assets/vinuni-logo.png" alt="VinUniversity"><span>AI20K K5 · L3 · LAB NGÀY 5</span></div>
+    <div class="mid">
+      <div class="kicker">Ngày 5 · Lab 240 phút</div>
+      <h1>Checkpoint bài làm</h1>
+      <div class="sub">Thiết kế sản phẩm AI cho lúc nó sai.</div>
+    </div>
+    <dl class="meta">
+      <div><dt>Lớp</dt><dd>L3A · 12/11/2026<br>L3B · 13/11/2026</dd></div>
+      <div><dt>Nhóm</dt><dd>Đúng 3 người · 1 track<br>1 bài nộp</dd></div>
+      <div><dt>Nộp</dt><dd>Link repo<br>trước giờ demo</dd></div>
+    </dl>
+  </div>
+  <div class="ph"></div>
+  <aside class="sn"><ul>
+    <li>Mỗi nhóm đúng 3 người, cùng một track, nộp một bài.</li>
+    <li>Hỏi người dựng prototype đã có công cụ chưa: Lovable, v0.dev, Figma, hoặc chỉ cần trình duyệt nếu làm HTML.</li>
+    <li>Không cần chatbot hay API key: đây là bài thiết kế, không chạy agent.</li>
+  </ul></aside>
+</section>
+
+<!-- ========== 1 · BỐN CÂU HỎI ========== -->
+<section class="slide" data-sec="Mục tiêu">
+  <div class="hd"><h2>Hết buổi, nhóm trả lời được bốn câu hỏi</h2></div>
+  <div class="body">
+    <div class="qs">
+      <div class="q"><div><b>AI sẽ sai ở đâu, sai chỗ nào đắt nhất?</b><small>Chặng 1, 2</small></div></div>
+      <div class="q"><div><b>Khi AI sai, người dùng thấy gì?</b><small>Chặng 3</small></div></div>
+      <div class="q"><div><b>AI được tự làm tới đâu?</b><small>Chặng 4</small></div></div>
+      <div class="q"><div><b>Người dùng có thấy và bấm được không?</b><small>Chặng 5, 6, Demo</small></div></div>
+    </div>
+  </div>
+  <aside class="sn"><ul>
+    <li>Đây là bài tư duy sản phẩm AI, không phải bài thi code.</li>
+    <li>Hai câu khó nhất theo đề: khi AI sai thì người dùng thấy gì, và AI được tự làm tới đâu.</li>
+    <li>"Đắt" là cái giá phải trả khi AI sai: mất tiền, hại sức khoẻ, mất niềm tin, hoặc không đảo lại được.</li>
+  </ul></aside>
+</section>
+
+<!-- ========== 2 · LỊCH ========== -->
+<section class="slide" data-sec="Lịch">
+  <div class="hd"><h2>Lịch 240 phút: 6 chặng, 3 mốc</h2></div>
+  <div class="body">
+    <div class="tline">
+      <div class="st"><span class="dot">01</span><span class="nm">Đọc đề</span><span class="pt">R1 · 5đ</span></div>
+      <div class="st"><span class="dot">02</span><span class="nm">Kịch bản</span><span class="pt">R2 · 10đ <span class="pill">M1</span></span></div>
+      <div class="st core"><span class="dot">03</span><span class="nm">UX khi AI sai</span><span class="pt">R3 · 25đ</span></div>
+      <div class="st core"><span class="dot">04</span><span class="nm">Mức tự chủ</span><span class="pt">R4 · 25đ <span class="pill">M2</span></span></div>
+      <div class="st rest"><span class="dot">Nghỉ</span><span class="nm">Giải lao</span><span class="pt"></span></div>
+      <div class="st core"><span class="dot">05</span><span class="nm">Prototype</span><span class="pt">R5 · 25đ <span class="pill">M3</span></span></div>
+      <div class="st"><span class="dot">06</span><span class="nm">Tốt là gì</span><span class="pt">R6 · 5đ</span></div>
+      <div class="st"><span class="dot">Demo</span><span class="nm">Demo</span><span class="pt">R7 · 5đ</span></div>
+      <div class="st end"><span class="dot">Xong</span><span class="nm">Kết thúc</span><span class="pt"></span></div>
+    </div>
+    <div class="dur">
+      <div style="flex:10">10</div><div style="flex:35">35</div><div class="core" style="flex:45">45</div><div class="core" style="flex:35">35</div>
+      <div class="rest" style="flex:15">15</div><div class="core" style="flex:60">60</div><div style="flex:10">10</div><div style="flex:30">30</div>
+    </div>
+    <div style="font-size:18.5px;color:var(--mut)">Số trong ô là số phút. <b style="color:var(--ink)">R</b> là khối điểm trong rubric, <b style="color:var(--ink)">M</b> là mốc TA đi qua bàn kiểm.</div>
+    <div class="callout"><b>75 trên 100 điểm</b> nằm ở chặng 3, 4, 5. Thiếu giờ thì bỏ chặng 6, không cắt ba chặng này.</div>
+  </div>
+  <aside class="sn">
+    <p><b>R</b> là khối điểm trong rubric: R1 đến R7, cộng lại 100 điểm. <b>M</b> là mốc TA đi qua bàn kiểm, khoảng 1 phút mỗi nhóm, không tính điểm riêng.</p>
+    <p><b>Tình huống nặng nhất</b> (đề gọi là "kịch bản đắt nhất") là tình huống mà nếu AI xử lý sai thì hậu quả lớn nhất: mất tiền, hại sức khoẻ, mất niềm tin, hoặc không đảo lại được. Mỗi nhóm chọn 2 tình huống như vậy ở chặng 2, rồi dùng tiếp ở chặng 3, 4 và 6.</p>
+    <ul class="tight">
+      <li><b>01 Đọc đề</b> · R1 5đ: nắm lát cắt hay là hiểu bài toán của track (ai dùng, làm việc gì, AI quyết gì), rồi ghi ra 3 việc tính năng này sẽ không làm, kèm lý do.</li>
+      <li><b>02 Kịch bản</b> · R2 10đ: viết ít nhất 8 tình huống người dùng nhắn mà AI có thể sai, rồi chọn 2 tình huống sai thì hậu quả nặng nhất. Hết chặng này TA đi kiểm mốc <b>M1</b>.</li>
+      <li><b>03 UX khi AI sai</b> · R3 25đ: AI sai thì người dùng thấy gì, làm gì tiếp.</li>
+      <li><b>04 Mức tự chủ</b> · R4 25đ: việc nào AI tự làm, cần người duyệt, hay cấm. Xong là <b>M2</b>.</li>
+      <li><b>Nghỉ</b> 15 phút.</li>
+      <li><b>05 Prototype</b> · R5 25đ: 1–2 màn hình bấm được. Xong là <b>M3</b>.</li>
+      <li><b>06 Tốt là gì</b> · R6 5đ: nhóm tự đặt 3 tiêu chí đạt / không đạt để biết thiết kế đã đủ tốt chưa, rồi chấm thử trên 2 tình huống nặng nhất. Hết giờ thì được bỏ chặng này, mất tối đa 5 điểm.</li>
+      <li><b>Demo</b> · R7 5đ: demo có ca lạ, mỗi người trình bày một phần.</li>
+      <li>Chấm chuỗi quyết định và bằng chứng, không chấm điền đủ ô.</li>
+    </ul>
+  </aside>
+</section>
+
+<!-- ========== 3 · TÊN REPO ========== -->
+<section class="slide" data-sec="Nộp bài">
+  <div class="hd"><h2>Repo nộp: tạo mới, đặt đúng tên</h2></div>
+  <div class="body">
+    <div class="grid g2">
+      <div class="callout"><div class="lab">Tạo repo</div>Repo <b>mới và trống</b>. Không fork, không clone repo đề rồi push lên.</div>
+      <div class="callout g"><div class="lab">Chỉ nộp hai thứ</div><code>spec.md</code> (copy từ <code>03-spec-template.md</code>) và thư mục <code>prototype/</code>.</div>
+    </div>
+    <div class="pn">
+      <div class="nmrow">
+        <div class="pc"><b>K5</b>Khoá</div><span class="dash">-</span>
+        <div class="pc"><b>L3A</b>Lớp: L3A hoặc L3B</div><span class="dash">-</span>
+        <div class="pc"><b>Day05</b>Ngày học</div><span class="dash">-</span>
+        <div class="pc r"><b>T3</b>Track nhóm đã nhận</div><span class="dash">-</span>
+        <div class="pc r"><b>BayNhanh</b>Tên nhóm, viết liền, không dấu</div>
+      </div>
+    </div>
+    <div class="grid" style="grid-template-columns:1.25fr 1fr;gap:16px">
+      <div class="callout n"><div class="lab">Ví dụ</div><div class="mono">K5-L3A-Day05-T3-BayNhanh<br>K5-L3B-Day05-T5-ViAnToan</div></div>
+      <div class="callout r"><div class="lab">Sai thường gặp</div><div class="xs">
+        <span><svg class="ic"><use href="#i-x"/></svg>Fork repo đề</span><span><svg class="ic"><use href="#i-x"/></svg>Repo riêng tư</span>
+        <span><svg class="ic"><use href="#i-x"/></svg>Sai lớp, sai track</span><span><svg class="ic"><use href="#i-x"/></svg>Sai mã học viên</span>
+      </div></div>
+    </div>
+  </div>
+  <aside class="sn"><ul>
+    <li>Repo phải mới và trống: không fork, không clone repo đề rồi push lên.</li>
+    <li>Nhóm chỉ lấy đúng một file từ repo đề: <code>03-spec-template.md</code>, đặt tên lại là <code>spec.md</code>.</li>
+    <li>Repo gồm <code>spec.md</code> và thư mục <code>prototype/</code>.</li>
+    <li>Repo để công khai: thử mở bằng cửa sổ ẩn danh, mở được mới đúng.</li>
+    <li>Mã học viên trong bảng thành viên là căn cứ đối chiếu điểm.</li>
+  </ul></aside>
+</section>
+
+<!-- ========== 4 · CHẶNG 1 ========== -->
+<section class="slide" data-timer="1" data-sec="Chặng 1">
+  <div class="hd"><h2>Chặng 1 · Đọc đề</h2><div class="mrow"><span class="tpill">10 phút · 5 điểm</span>Hiểu lát cắt của track, khoanh phạm vi.</div></div>
+  <div class="body">
+    <div class="two">
+      <div class="pn">
+        <div class="cap">Lát cắt = bài toán của nhóm, gói trong một câu</div>
+        <div class="flow">
+          <div class="nd">Một người dùng</div><svg class="ic ar"><use href="#i-arrow"/></svg>
+          <div class="nd">Một việc</div><svg class="ic ar"><use href="#i-arrow"/></svg>
+          <div class="nd v">Một quyết định của AI</div><svg class="ic ar"><use href="#i-arrow"/></svg>
+          <div class="nd">Một kết quả</div>
+        </div>
+        <div class="cap">Đọc bảng tool: mỗi tool thuộc loại nào?</div>
+        <div class="tags">
+          <span class="tag n">Chỉ đọc</span>
+          <span class="tag g">Đảo lại được</span>
+          <span class="tag r">Không đảo lại được</span>
+        </div>
+      </div>
+      <div class="col">
+        <div class="rem"><div class="lab">Nhớ</div><ul>
+          <li>Lát cắt phát sẵn trong track, không chọn lại.</li>
+          <li>Ghi 3 việc tính năng <b>không</b> làm, kèm lý do.</li></ul></div>
+        <div class="checks plain v grow"><div class="lab">Xong khi</div><ul>
+          <li>Nói được lát cắt trong một câu.</li>
+          <li>Biết sai kiểu nào đắt nhất.</li>
+          <li>Chỉ được tool không đảo lại được.</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <aside class="sn"><ul>
+    <li>Bấm giờ 10 phút khi nhóm mở file track.</li>
+    <li>Hỏi nhanh vài nhóm: "Lát cắt của nhóm là gì, sai thì ai chịu?"</li>
+    <li>Ví dụ trong guide (app giao đồ ăn): AI được thêm quyền huỷ đơn. Không làm: đổi món, đổi địa chỉ giao, hoàn tiền.</li>
+    <li>Nhóm T4: tool <code>soan_hoan_tien</code> tên là "soạn" nhưng mô tả là hoàn tiền thật.</li>
+    <li>Sản phẩm thật chỉ để tham khảo: không chat, không đăng nhập.</li>
+    <li>Dùng cho mọi chặng: một quyết định = bốn ý (đã cân nhắc gì · chọn gì · vì sao · loại gì), bằng chứng trỏ về một tool, một dòng dữ liệu, hoặc một chỗ trên prototype.</li>
+  </ul></aside>
+</section>
+
+<!-- ========== 5 · CHẶNG 2 → M1 ========== -->
+<section class="slide" data-timer="2" data-sec="Chặng 2 · mốc M1">
+  <div class="hd"><h2>Chặng 2 · Lường trước kịch bản</h2><div class="mrow"><span class="tpill">35 phút · 10 điểm</span>Viết ít nhất 8 kịch bản AI có thể sai.</div></div>
+  <div class="body">
+    <div class="two">
+      <div class="pn">
+        <div class="cap">Phủ đủ 4 lớp chỗ khó</div>
+        <div class="flow">
+          <div class="nd">① Nguồn sự thật<small>AI bịa khi không có căn cứ</small></div>
+          <div class="nd">② Mơ hồ<small>tin nhắn thiếu thông tin</small></div>
+          <div class="nd">③ Ngoài thẩm quyền<small>đòi việc AI không được làm</small></div>
+          <div class="nd">④ Đặc thù domain<small>sai là mất tiền, sức khoẻ</small></div>
+        </div>
+        <div class="cap">Rồi khoanh 2 kịch bản đắt nhất</div>
+        <div style="display:flex;align-items:center;gap:18px">
+          <div class="sq8"><i>1</i><i>2</i><i class="hot">3</i><i>4</i><i>5</i><i class="hot">6</i><i>7</i><i>8</i></div>
+          <div style="font-size:19px;line-height:1.25">Đắt nhất: sai thì hậu quả nặng nhất.</div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="rem"><div class="lab">Nhớ</div><ul>
+          <li>Mỗi kịch bản: người dùng nhắn gì, AI có thể sai thế nào.</li>
+          <li>Chỉ rõ sai ở tool hay dòng dữ liệu nào.</li></ul></div>
+        <div class="checks v grow"><div class="lab">Mốc M1 · Các TA sẽ kiểm tra</div><ul>
+          <li>Phủ đủ 4 lớp.</li>
+          <li>Mỗi kịch bản trỏ về tool hoặc dữ liệu.</li>
+          <li>Có lý do chọn 2 kịch bản.</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <aside class="sn"><ul>
+    <li>Bấm giờ 35 phút. Hết giờ là phút 45: TA đi tích M1.</li>
+    <li>Bắt đầu từ ba tin mồi và mục Hard tests của track.</li>
+    <li>Tốt khi: có kịch bản mà câu trả lời trông đúng nhưng vẫn rủi ro, đúng vì may chứ không vì thiết kế.</li>
+    <li>T1, T4, T5 không có dữ liệu dựng: nhóm trỏ về tool, hoặc tự sinh dữ liệu giả và ghi rõ.</li>
+    <li>Mỗi kịch bản một dòng: tin người dùng · lớp · AI có thể sai thế nào · sản phẩm tốt nên làm gì · nhãn.</li>
+    <li>Viết "AI trả lời sai" là chưa đủ: phải trỏ về một tool hoặc một dòng dữ liệu.</li>
+  </ul></aside>
+</section>
+
+<!-- ========== 6 · CHẶNG 3 ========== -->
+<section class="slide" data-timer="3" data-sec="Chặng 3">
+  <div class="hd"><h2>Chặng 3 · UX khi AI sai</h2><div class="mrow"><span class="tpill">45 phút · 25 điểm</span>Làm cho 2 kịch bản đắt nhất.</div></div>
+  <div class="body">
+    <div class="two">
+      <div class="pn" style="flex-direction:row;gap:20px;align-items:center">
+        <div class="chat">
+          <div class="me">Đổi giúp mình sang sáng mai nhé.</div>
+          <div class="ai">
+            <div class="ln"><span class="mk">1</span><span>Sáng mai có 2 chuyến. Bạn muốn bay chuyến nào?</span></div>
+            <div class="ln"><span class="mk">2</span><span class="unsure">Mình chưa chắc</span></div>
+            <div class="bt"><span class="mk">3</span><span class="b p">Chọn chuyến</span><span class="b">Gặp nhân viên</span></div>
+          </div>
+          <div class="sys"><span class="mk">4</span>Nhân viên hỗ trợ nhận được tóm tắt</div>
+        </div>
+        <div class="leg">
+          <div><span class="mk">1</span><span><b>AI nói gì</b><small>câu chữ, nguyên văn</small></span></div>
+          <div><span class="mk">2</span><span><b>Người dùng thấy gì</b><small>độ chắc, bằng chứng</small></span></div>
+          <div><span class="mk">3</span><span><b>Làm gì tiếp</b><small>sửa, hỏi người, hoàn tác</small></span></div>
+          <div><span class="mk">4</span><span><b>Ai được báo</b><small>sau bao lâu</small></span></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="rem"><div class="lab">Nhớ</div><ul>
+          <li>AI không chắc: hỏi lại, trả lời kèm giới hạn, hay chuyển người?</li>
+          <li>Chọn 2–3 nguyên tắc HAX/PAIR, chỉ vào chỗ cụ thể.</li></ul></div>
+        <div class="checks plain v grow"><div class="lab">Xong khi</div><ul>
+          <li>Đủ 4 ý cho mỗi kịch bản.</li>
+          <li>Có phương án đã loại, vì sao.</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <aside class="sn"><ul>
+    <li>Bấm giờ 45 phút. Chặng này không có mốc TA nên dễ trôi giờ.</li>
+    <li>Hình minh hoạ là ca "đổi sang sáng mai" của T3, lấy từ prototype mẫu của giảng viên.</li>
+    <li>Bốn đường đi: happy path · low-confidence · failure · correction. Hai kịch bản đắt nhất thường rơi vào hai đường cuối.</li>
+    <li>HAX/PAIR là hai bộ nguyên tắc thiết kế sản phẩm AI. Mẫu viết: "G10 → câu AI nói ở kịch bản 1: hỏi lại thay vì đoán."</li>
+    <li>3 điểm cho việc chỉ ra một lỗi sửa câu chữ không cứu được.</li>
+    <li>Gọi đúng loại lỗi: hệ thống, người dùng, cảm nhận.</li>
+    <li>TA sẽ hỏi: "Chỉ cho tôi chỗ nào trên màn hình là G__."</li>
+  </ul></aside>
+</section>
+
+<!-- ========== 7 · CHẶNG 4 → M2 ========== -->
+<section class="slide" data-timer="4" data-sec="Chặng 4 · mốc M2">
+  <div class="hd"><h2>Chặng 4 · Mức tự chủ</h2><div class="mrow"><span class="tpill">35 phút · 25 điểm</span>Xếp mỗi tool vào một trong ba mức.</div></div>
+  <div class="body">
+    <div class="two">
+      <div class="pn" style="gap:10px">
+        <div class="cap">Mức tự chủ = AI được tự làm tới đâu · chọn theo cost-of-error</div>
+        <div class="lane n"><div class="who">Tự làm</div><div class="why">Sai thì rẻ, người dùng tự sửa được.</div><svg class="ic ar"><use href="#i-arrow"/></svg><div class="out">Có hoàn tác</div></div>
+        <div class="lane g"><div class="who">Cần duyệt</div><div class="why">Sai thì đắt hoặc khó đảo lại.</div><svg class="ic ar"><use href="#i-arrow"/></svg><div class="out">Có bước xác nhận</div></div>
+        <div class="lane r"><div class="who">Cấm</div><div class="why">Ngoài thẩm quyền của AI.</div><svg class="ic ar"><use href="#i-arrow"/></svg><div class="out">Không có nút làm</div></div>
+      </div>
+      <div class="col">
+        <div class="rem"><div class="lab">Nhớ</div><ul>
+          <li>Mỗi người tự xếp 5 phút, rồi cả nhóm chốt.</li>
+          <li>Cost-of-error: sai thì ai chịu gì.</li></ul></div>
+        <div class="checks v grow"><div class="lab">Mốc M2 · Các TA sẽ kiểm tra</div><ul>
+          <li>Lý do theo cost-of-error.</li>
+          <li>Chỉ ra tool khó xếp nhất.</li>
+          <li>Đã thử trên 3 kịch bản.</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <aside class="sn"><ul>
+    <li>Bấm giờ 35 phút. Hết giờ là phút 125: TA tích M2, rồi nghỉ.</li>
+    <li>Tool mà ba người xếp lệch nhau thường là tool khó xếp nhất.</li>
+    <li>Không nhận lý do "vì tiện", "vì AI giỏi".</li>
+    <li>3 kịch bản để thử: 2 kịch bản đắt nhất và 1 kịch bản bình thường.</li>
+    <li>Thử mức theo ba câu: cái sai có bị chặn · còn việc nào làm khi lẽ ra phải hỏi · người bình thường có phải chờ vô ích.</li>
+    <li>Mức "cấm" cũng dùng khi sai thì không đảo được mà một bước xác nhận cũng không đủ chặn.</li>
+  </ul></aside>
+</section>
+
+<!-- ========== BREAK ========== -->
+<section class="slide div nochrome" data-timer="nghi">
+  <div class="part">Nghỉ giữa giờ · 15 phút</div>
+  <div class="chips"><span class="k">MỐC LAB5</span><span class="chip ok">M1 · Kịch bản</span><span class="chip ok">M2 · Mức tự chủ</span><span class="chip">M3 · Bấm được</span><span class="chip">Nộp link repo</span><span class="chip">Demo ca lạ</span></div>
+  <div class="main" style="grid-template-columns:1fr auto;gap:40px">
+    <div><h1>Nghỉ 15 phút</h1><div class="sub">Quay lại đúng giờ để vào chặng 5.</div></div>
+    <div class="tslot"></div>
+  </div>
+  <div class="nx3">
+    <div><b>1</b>Chặng 5 · Prototype</div>
+    <div><b>2</b>Chặng 6 · Tốt là gì</div>
+    <div><b>3</b>Demo</div>
+  </div>
+  <aside class="sn"><ul>
+    <li>Bấm giờ 15 phút trên đồng hồ lớn của slide.</li>
+    <li>Gợi ý: nhóm nào chưa qua M2 thì TA ghé trước khi vào chặng 5.</li>
+  </ul></aside>
+</section>
+
+<!-- ========== 8 · CHẶNG 5 → M3 ========== -->
+<section class="slide" data-timer="5" data-sec="Chặng 5 · mốc M3">
+  <div class="hd"><h2>Chặng 5 · Prototype</h2><div class="mrow"><span class="tpill">60 phút · 25 điểm</span>Dựng 1–2 màn hình cho ca khó nhất.</div></div>
+  <div class="body">
+    <div class="two">
+      <div class="pn">
+        <div class="flow">
+          <div class="stepc"><h4><span class="mk">1</span>Dựng màn hình bấm được</h4><div class="wf"><i></i><i class="s"></i><i class="b"></i></div></div>
+          <svg class="ic ar"><use href="#i-arrow"/></svg>
+          <div class="stepc"><h4><span class="mk">2</span>Hiện mức tự chủ</h4><div class="wf tg"><span style="background:var(--greenbg);color:#245C27">Hoàn tác</span><span style="background:var(--goldbg);color:#6E5000">Xác nhận</span><span style="background:var(--bluebg);color:#125C86">Gặp người thật</span></div></div>
+          <svg class="ic ar"><use href="#i-arrow"/></svg>
+          <div class="stepc"><h4><span class="mk">3</span>Chụp ảnh, đánh số</h4><div class="wf"><i></i><i class="s"></i><i class="b"></i><span class="mk" style="right:10px;top:8px">1</span><span class="mk" style="right:44px;bottom:8px">2</span></div></div>
+        </div>
+        <div class="tags">
+          <span class="tag n">Bấm được từ đầu tới cuối</span>
+          <span class="tag r">Kẹt quá 20 phút: gọi TA</span>
+        </div>
+      </div>
+      <div class="col">
+        <div class="rem"><div class="lab">Nhớ</div><ul>
+          <li>Dữ liệu giả, không cần đẹp.</li>
+          <li>Việc ở mức cấm thì không có nút làm.</li></ul></div>
+        <div class="checks v grow"><div class="lab">Mốc M3 · Các TA sẽ kiểm tra</div><ul>
+          <li>Bấm hết được ca khó.</li>
+          <li>Thấy ít nhất 2 mức tự chủ.</li>
+          <li>HAX trỏ được vào màn hình.</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <aside class="sn"><ul>
+    <li>Bấm giờ 60 phút. Hết giờ là phút 200: TA tích M3.</li>
+    <li>Prototype là bản thử bấm được, 1–2 màn hình. Công cụ: Lovable, v0.dev, Figma hoặc một file HTML.</li>
+    <li>Mẫu của giảng viên: <code>prototype-sample/index.html</code>. Cho xem 3 phút rồi đóng lại, đừng chép giao diện.</li>
+    <li>Mẫu dùng ba mức "gợi ý / cần xác nhận / tự làm + hoàn tác"; rubric chấm theo "tự làm / cần người duyệt / cấm".</li>
+    <li>Đánh số ảnh: mỗi số ghi thể hiện gì, nguyên tắc HAX/PAIR nào, mức tự chủ nào.</li>
+    <li>Vẽ tay thì mất 5 điểm "bấm qua được", vẫn được chấm các dòng còn lại của R5.</li>
+    <li>Có lời gọi AI thật (+3): chỉ đưa dữ liệu dựng vào, không để API key trong code nộp.</li>
+    <li>Nhóm T3 chọn ca khó khác ca "đổi sang sáng mai" của mẫu.</li>
+  </ul></aside>
+</section>
+
+<!-- ========== 9 · CHẶNG 6 ========== -->
+<section class="slide" data-timer="6" data-sec="Chặng 6">
+  <div class="hd"><h2>Chặng 6 · Tốt là gì</h2><div class="mrow"><span class="tpill">10 phút · 5 điểm</span>Đặt 3 tiêu chí Pass/Fail, rồi chấm thử.</div></div>
+  <div class="body">
+    <div class="two">
+      <div class="pn">
+        <div class="cap">Chấm thử thiết kế của nhóm trên 2 kịch bản đắt nhất</div>
+        <div class="pf">
+          <span></span><span class="h">Kịch bản đắt nhất 1</span><span class="h">Kịch bản đắt nhất 2</span>
+          <span class="rw">Tiêu chí 1</span><span class="cell">Pass / Fail</span><span class="cell">Pass / Fail</span>
+          <span class="rw">Tiêu chí 2</span><span class="cell">Pass / Fail</span><span class="cell">Pass / Fail</span>
+          <span class="rw">Tiêu chí 3</span><span class="cell">Pass / Fail</span><span class="cell">Pass / Fail</span>
+        </div>
+        <div class="tags"><span class="tag g">Thiếu giờ thì bỏ chặng này, mất tối đa 5 điểm</span></div>
+      </div>
+      <div class="col">
+        <div class="rem"><div class="lab">Nhớ</div><ul>
+          <li>Pass/Fail: chỉ có đạt hoặc không đạt.</li>
+          <li>Người ngoài nhóm chấm ra cùng kết quả.</li></ul></div>
+        <div class="checks plain v grow"><div class="lab">Xong khi</div><ul>
+          <li>Có 3 tiêu chí chấm được.</li>
+          <li>Đã chấm thử, ghi lỗi còn lại.</li>
+          <li>Đã nộp link repo.</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <aside class="sn">
+    <p><b>"Tốt là gì"</b> là tên chặng 6. Ở chặng này nhóm tự trả lời câu "thiết kế của mình thế nào thì gọi là đạt", bằng cách đặt ra 3 tiêu chí.</p>
+    <p><b>"3 tiêu chí Pass/Fail":</b> mỗi tiêu chí chỉ có hai kết quả, đạt hoặc không đạt, và phải rõ đến mức người ngoài nhóm đọc cũng chấm ra cùng kết quả, không cần tranh luận. Câu hỏi gợi ý trong đề là: "Ba điều gì, nếu AI làm đúng, thì nhóm dám đưa cho người dùng thật?" Đặt xong, nhóm chấm thử thiết kế của chính mình trên 2 kịch bản đắt nhất và ghi lại lỗi còn sót.</p>
+    <p>Đề không cho ví dụ tiêu chí. Một ví dụ tôi tự đặt, dựa trên rubric riêng của T3: "AI không đổi vé khi khách chưa xác nhận rõ chuyến nào, cho ai." Nhìn vào prototype là biết đạt hay không.</p>
+    <ul>
+    <li>Bấm giờ 10 phút. Thiếu giờ thì bỏ chặng này, mất tối đa 5 điểm.</li>
+    <li>Nhắc nhóm thử mở repo bằng cửa sổ ẩn danh trước khi nộp link.</li>
+    <li>Spec §7 hỏi về ca lạ ở demo, trong khi spec nộp trước demo: nộp trước, bổ sung §7 sau nếu giảng viên cho.</li>
+  </ul></aside>
+</section>
+
+<!-- ========== 10 · DEMO ========== -->
+<section class="slide" data-timer="demo" data-sec="Demo">
+  <div class="hd"><h2>Demo · có ca lạ</h2><div class="mrow"><span class="tpill">30 phút · 5 điểm</span>Mỗi thành viên trình bày một phần.</div></div>
+  <div class="body">
+    <div class="two">
+      <div class="pn">
+        <div class="flow">
+          <div class="nd">Lát cắt<small>30 giây</small></div><svg class="ic ar"><use href="#i-arrow"/></svg>
+          <div class="nd">Bấm ca khó<small>trên prototype</small></div><svg class="ic ar"><use href="#i-arrow"/></svg>
+          <div class="nd">Một mức tự chủ<small>sai thì ai mất gì</small></div><svg class="ic ar"><use href="#i-arrow"/></svg>
+          <div class="nd r">Ca lạ<small>người xem đưa tại chỗ</small></div>
+        </div>
+        <div class="cap">Bonus tối đa +8</div>
+        <div class="tags">
+          <span class="tag b">+5 · xung phong demo trước lớp</span>
+          <span class="tag b">+3 · có lời gọi AI thật</span>
+        </div>
+      </div>
+      <div class="col">
+        <div class="rem"><div class="lab">Nhớ</div><ul>
+          <li>Ca lạ: tình huống nhóm chưa chuẩn bị.</li>
+          <li>Không giải thích được phần của mình: phần đó 0 điểm.</li></ul></div>
+        <div class="checks plain v grow"><div class="lab">Xong khi</div><ul>
+          <li>Xử lý ca lạ đúng mức tự chủ đã đặt.</li>
+          <li>Ai cũng giải thích được phần mình.</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <aside class="sn"><ul>
+    <li>Bấm giờ 30 phút cho cả khối. Demo trong zone, hoặc xung phong trước lớp.</li>
+    <li>Hai câu hỏi ở demo: "Chỉ cho tôi chỗ nào trên màn hình là G__." · "Hành động này sai thì ai mất gì, vì vậy nó ở mức nào?"</li>
+    <li>Ca lạ do TA, nhóm bạn hoặc giảng viên đưa. Xử lý đúng mức tự chủ đã đặt: 3 điểm ở R7.</li>
+    <li>Lời gọi AI thật phải nằm ở quyết định chính và không lộ API key mới được +3.</li>
+    <li>Vibe-coding rule: dùng AI để build thoải mái, nhưng không giải thích được phần có tên mình thì phần đó 0 điểm.</li>
+  </ul></aside>
+</section>
+
+<!-- ========== 11 · CHECKLIST ========== -->
+<section class="slide" data-sec="Nộp bài">
+  <div class="hd"><h2>Checklist nộp bài</h2></div>
+  <div class="body">
+    <div class="two" style="grid-template-columns:1.35fr 1fr;align-items:start">
+      <ul class="chk" style="margin-top:6px">
+        <li>Repo <b>mới, công khai</b>, đặt đúng tên.</li>
+        <li><code>spec.md</code> theo <code>03-spec-template.md</code>.</li>
+        <li>Bảng thành viên ở đầu, <b>mã học viên đúng</b>.</li>
+        <li><code>prototype/</code>: file hoặc link, kèm ảnh đánh số.</li>
+        <li>Không API key, không dữ liệu thật.</li>
+      </ul>
+      <div class="col">
+        <div class="sc"><div><b>Nộp link repo</b>trước giờ demo</div></div>
+        <div class="sc"><div><b>Cả nhóm trả lời được</b>"Hành động này sai thì ai mất gì?"</div></div>
+      </div>
+    </div>
+  </div>
+  <aside class="sn"><ul>
+    <li>Kênh nộp và hạn nộp chính xác: giảng viên thông báo trong buổi.</li>
+    <li>Repo để riêng tư là người chấm không chấm được bài.</li>
+    <li>Ba câu cả nhóm phải trả lời được: "Hành động này sai thì ai mất gì?" · "Lỗi nguy hiểm nhất là gì?" · "Phần bạn làm là gì?"</li>
+    <li>Chỉ dùng dữ liệu dựng trong track hoặc dữ liệu giả tự sinh: không số tài khoản, số thẻ, OTP, thông tin sức khoẻ, đơn hàng thật.</li>
+  </ul></aside>
+</section>
+
+<script src="assets/timers.js"></script>
+<script src="assets/deck.js"></script>
+</body>
+</html>
