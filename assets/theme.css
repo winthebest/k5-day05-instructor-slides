@@ -208,9 +208,10 @@ pre{font-family:var(--mono);font-size:15.5px;line-height:1.55;background:var(--c
   #side .timer.mid button{width:46px;height:46px}
   #side .timer.mid svg{width:21px;height:21px}
   #side .sb{flex:1;min-height:0;overflow-y:auto}
-  #side ul{margin:0;padding-left:20px}
+  #side ul,#side ol{margin:0;padding-left:20px}
   #side li{margin-bottom:11px}
   #side li::marker{color:var(--blue)}
+  #side ul + p,#side ol + p{margin-top:2px}
   #side .nx{flex:none;font-size:16.5px;color:var(--mut)}
   #side .nx b{color:var(--ink)}
   #side .keys{flex:none;font-family:var(--sans);font-size:12px;color:var(--mut);border-top:1px solid var(--line);padding-top:10px}
@@ -240,8 +241,8 @@ pre{font-family:var(--mono);font-size:15.5px;line-height:1.55;background:var(--c
   body.presenter.side-on #side{left:calc(50% + 30px*var(--k));top:calc(50% - 360px*var(--k));width:810px;transform:scale(var(--k));transform-origin:0 0;
     overflow:visible;padding:26px 34px 22px;font-size:21px;background:#F7F4EC;border:1.5px solid #CBC4B3;border-radius:0}
   body.presenter.side-on #side .sb{padding-right:6px}
-  body.presenter.side-on #side li{margin-bottom:12px}
-  body.presenter.side-on #side p{margin:0 0 14px}
+  body.presenter.side-on #side li{margin-bottom:.5em}   /* gaps shrink with the type when long notes are fitted */
+  body.presenter.side-on #side p{margin:0 0 .6em}
   body.presenter.side-on #side .sb:has(ul.tight){font-size:20px}
   body.presenter.side-on #side ul.tight li{margin-bottom:8px}
   /* timer, next-slide title and key hints sit under the slide preview (the panel is their positioning box) */
