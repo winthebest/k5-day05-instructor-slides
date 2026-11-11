@@ -300,28 +300,30 @@ pre{font-family:var(--mono);font-size:15.5px;line-height:1.55;background:var(--c
 .tag .ic{width:21px;height:21px}
 .tag.n{background:var(--greenbg);color:#245C27}.tag.g{background:var(--goldbg);color:#6E5000}.tag.r{background:var(--redbg);color:#8F2019}.tag.b{background:var(--bluebg);color:#125C86}
 .mk{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--red);color:#fff;font:700 12.5px var(--sans);flex:none}
-/* roadmap timeline */
-.tline{display:grid;grid-template-columns:repeat(9,1fr);position:relative}
-.tline::before{content:"";position:absolute;left:5.5%;right:5.5%;top:29px;height:2.5px;background:#CBC4B3}
-.tline .st{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;position:relative;padding:0 4px}
-.tline .mn{font-family:var(--mono);font-size:16px;line-height:22px;color:var(--mut)}
-.tline .dot{font:600 15px var(--mono);width:60px;height:60px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 4px var(--bg)}
-.tline .dot .ic{width:28px;height:28px}
+/* roadmap timeline: one column per block, rows of fixed height so everything lines up */
+.tline{display:grid;grid-template-columns:repeat(8,1fr);column-gap:12px;position:relative}
+.tline::before{content:"";position:absolute;left:6.25%;right:6.25%;top:31px;height:2.5px;background:#CBC4B3}
+.tline .st{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;min-width:0}
+.tline .dot{font:600 16px var(--mono);width:64px;height:64px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 5px var(--bg)}
 .tline .st.core .dot{background:var(--red)}
 .tline .st.rest .dot{background:var(--bg);color:var(--mut);border:2px dashed #A59D8B}
-.tline .st.end .dot{background:var(--green)}
-.tline .no{font-family:var(--mono);font-weight:600;font-size:13.5px;background:#E0DACC;border-radius:5px;padding:1px 7px;color:var(--mut)}
-.tline .nm{font-weight:700;font-size:21px;line-height:1.2;min-height:50px;margin-top:4px}
+.tline .nm{font-weight:700;font-size:21px;line-height:1.2;height:56px;margin-top:14px;display:flex;align-items:flex-start;justify-content:center}
 .tline .st.core .nm{color:var(--red)}
-.tline .pt{font-family:var(--mono);font-size:14px;color:var(--mut);display:flex;gap:5px;align-items:center;min-height:22px}
-.dur{display:flex;gap:4px;height:44px}
-.dur div{border-radius:7px;background:var(--navy);color:#fff;font:600 16px var(--mono);display:flex;align-items:center;justify-content:center}
-.dur div.core{background:var(--red)}.dur div.rest{background:transparent;border:2px dashed #A59D8B;color:var(--mut)}
+.tline .min{align-self:stretch;height:46px;border-radius:9px;background:var(--navy);color:#fff;font:600 17px var(--mono);display:flex;align-items:center;justify-content:center}
+.tline .st.core .min{background:var(--red)}
+.tline .st.rest .min{background:transparent;border:2px dashed #A59D8B;color:var(--mut)}
+.tline .pt{font-family:var(--mono);font-size:14.5px;line-height:22px;height:22px;margin-top:12px;color:var(--ink);white-space:nowrap}
+.tline .ms{height:26px;margin-top:8px;display:flex;align-items:center;justify-content:center}
+.tline .ms .pill{font-size:13.5px;padding:3px 13px}
+.tnote{display:flex;gap:34px;font-size:18.5px;color:var(--mut);align-items:center}
+.tnote b{color:var(--ink)}
+.tnote .sw{display:inline-block;width:16px;height:16px;border-radius:4px;background:var(--red);margin-right:8px;vertical-align:-2px}
 /* four questions */
 .qs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.q{background:#fff;border:1.5px solid #CBC4B3;border-radius:14px;padding:34px 28px;display:flex;gap:20px;align-items:center;min-height:150px}
+.q{background:#fff;border:1.5px solid #CBC4B3;border-radius:14px;padding:26px 28px;height:172px}
 .q b{font-size:31px;line-height:1.2;display:block}
-.q small{font-family:var(--sans);font-size:16.5px;color:var(--mut);display:block;margin-top:5px}
+.q > div{display:flex;flex-direction:column}
+.q small{order:-1;font-family:var(--sans);font-weight:700;font-size:14px;letter-spacing:.11em;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
 /* repo name pieces */
 .nmrow{display:flex;align-items:flex-start;justify-content:space-between;gap:6px}
 .nmrow .pc{display:flex;flex-direction:column;align-items:center;gap:10px;font-family:var(--sans);font-size:16px;color:var(--mut);text-align:center}
@@ -378,3 +380,9 @@ pre{font-family:var(--mono);font-size:15.5px;line-height:1.55;background:var(--c
 /* submission cards */
 .sc{background:#fff;border:1.5px solid #CBC4B3;border-radius:14px;padding:22px 22px;display:flex;gap:16px;align-items:center;font-size:22px;line-height:1.25}
 .sc b{display:block;font-size:25px}
+
+/* ---------- same frame on every stage slide: diagram panel left, "Nhớ" and checks right, identical sizes ---------- */
+.two.stg{height:424px}
+.two.stg > .pn{justify-content:center}
+.two.stg .rem{flex:none;height:192px}
+.chk{margin:0}
