@@ -34,13 +34,14 @@
     <dl class="meta">
       <div><dt>Lớp</dt><dd>L3A · 12/11/2026<br>L3B · 13/11/2026</dd></div>
       <div><dt>Nhóm</dt><dd>Đúng 3 người · 1 track<br>1 bài nộp</dd></div>
-      <div><dt>Nộp</dt><dd>Link repo<br>trước giờ demo</dd></div>
+      <div><dt>Nộp</dt><dd>Link repo trước<br>23:59 ngày lab</dd></div>
     </dl>
   </div>
   <div class="ph"></div>
   <aside class="sn"><ul>
     <li>Mỗi nhóm đúng 3 người, cùng một track, nộp một bài.</li>
-    <li>Hỏi người dựng prototype đã có công cụ chưa: Lovable, v0.dev, Figma, hoặc chỉ cần trình duyệt nếu làm HTML.</li>
+    <li>Hỏi người dựng prototype đã có công cụ chưa: Lovable, v0.dev, Figma, một coding agent như Claude, Codex hoặc Gemini, hoặc chỉ cần trình duyệt nếu làm HTML.</li>
+    <li>Hạn nộp link repo: 23:59 ngày lab của lớp (L3A 12/11, L3B 13/11), tức là sau demo.</li>
     <li>Không cần chatbot hay API key: đây là bài thiết kế, không chạy agent.</li>
   </ul>
     <p><b>Không phải lúc nào cũng biết trước AI sai lúc nào.</b> Vì vậy bài dạy làm ba việc:</p>
@@ -279,7 +280,7 @@
     <li>Bốn đường đi: happy path · low-confidence · failure · correction. Hai kịch bản đắt nhất thường rơi vào hai đường cuối.</li>
     <li>HAX/PAIR là hai bộ nguyên tắc thiết kế sản phẩm AI. Mẫu viết: "G10 → câu AI nói ở kịch bản 1: hỏi lại thay vì đoán."</li>
     <li>3 điểm cho việc chỉ ra một lỗi sửa câu chữ không cứu được.</li>
-    <li>Gọi đúng loại lỗi: hệ thống, người dùng, cảm nhận.</li>
+    <li>Gọi đúng loại lỗi: hệ thống, người dùng, ngữ cảnh. Lỗi ngữ cảnh (PAIR gọi là context error) là hệ thống chạy đúng thiết kế nhưng sai với tình huống của người dùng; loại này thường phải sửa thiết kế, không chỉ sửa câu chữ.</li>
     <li>TA sẽ hỏi: "Chỉ cho tôi chỗ nào trên màn hình là G__."</li>
   </ul></aside>
 </section>
@@ -313,6 +314,7 @@
     <li>3 kịch bản để thử: 2 kịch bản đắt nhất và 1 kịch bản bình thường.</li>
     <li>Thử mức theo ba câu: cái sai có bị chặn · còn việc nào làm khi lẽ ra phải hỏi · người bình thường có phải chờ vô ích.</li>
     <li>Mức "cấm" cũng dùng khi sai thì không đảo được mà một bước xác nhận cũng không đủ chặn.</li>
+    <li>Tool cần người duyệt phải ghi thêm: ai duyệt, người duyệt thấy gì trước khi bấm, và nếu không ai duyệt kịp thì chuyện gì xảy ra.</li>
   </ul></aside>
 </section>
 
@@ -366,7 +368,7 @@
   </div>
   <aside class="sn"><ul>
     <li>Bấm giờ 60 phút. Hết giờ là phút 200: TA tích M3.</li>
-    <li>Prototype là bản thử bấm được, 1–2 màn hình. Công cụ: Lovable, v0.dev, Figma hoặc một file HTML.</li>
+    <li>Prototype là bản thử bấm được, 1–2 màn hình. Công cụ: Lovable, v0.dev, Figma, một coding agent như Claude, Codex hoặc Gemini, hoặc một file HTML.</li>
     <li>Mẫu của giảng viên: <code>prototype-sample/index.html</code>. Cho xem 3 phút rồi đóng lại, đừng chép giao diện.</li>
     <li>Mẫu dùng ba mức "gợi ý / cần xác nhận / tự làm + hoàn tác"; rubric chấm theo "tự làm / cần người duyệt / cấm".</li>
     <li>Đánh số ảnh: mỗi số ghi thể hiện gì, nguyên tắc HAX/PAIR nào, mức tự chủ nào.</li>
@@ -409,7 +411,7 @@
     <ul>
     <li>Bấm giờ 10 phút. Thiếu giờ thì bỏ chặng này, mất tối đa 5 điểm.</li>
     <li>Nhắc nhóm thử mở repo bằng cửa sổ ẩn danh trước khi nộp link.</li>
-    <li>Spec §7 hỏi về ca lạ ở demo, trong khi spec nộp trước demo: nộp trước, bổ sung §7 sau nếu giảng viên cho.</li>
+    <li>Spec nộp trước 23:59 ngày lab, tức là sau demo, nên nhóm ghi §7 (ca lạ ở demo) sau khi demo xong.</li>
   </ul></aside>
 </section>
 
@@ -458,18 +460,19 @@
       <ul class="chk" style="margin-top:6px">
         <li>Repo <b>mới, công khai</b>, đặt đúng tên.</li>
         <li><code>spec.md</code> theo <code>03-spec-template.md</code>.</li>
-        <li>Bảng thành viên ở đầu, <b>mã học viên đúng</b>.</li>
+        <li>Bảng thành viên ở đầu: <b>mã học viên đúng</b>, mỗi người làm gì.</li>
         <li><code>prototype/</code>: file hoặc link, kèm ảnh đánh số.</li>
         <li>Không API key, không dữ liệu thật.</li>
       </ul>
       <div class="col">
-        <div class="sc grow"><div><b>Nộp link repo</b>trước giờ demo</div></div>
+        <div class="sc grow"><div><b>Nộp link repo</b>trước 23:59 ngày lab</div></div>
         <div class="sc grow"><div><b>Cả nhóm trả lời được</b>"Hành động này sai thì ai mất gì?"</div></div>
       </div>
     </div>
   </div>
   <aside class="sn"><ul>
-    <li>Kênh nộp và hạn nộp chính xác: giảng viên thông báo trong buổi.</li>
+    <li>Hạn nộp: 23:59 ngày 12/11 (L3A), 23:59 ngày 13/11 (L3B). Kênh nộp: giảng viên thông báo trong buổi.</li>
+    <li>Nhóm tự chia việc, không bắt buộc theo vai trò cố định, nhưng bảng thành viên phải ghi mỗi người làm gì.</li>
     <li>Repo để riêng tư là người chấm không chấm được bài.</li>
     <li>Ba câu cả nhóm phải trả lời được: "Hành động này sai thì ai mất gì?" · "Lỗi nguy hiểm nhất là gì?" · "Phần bạn làm là gì?"</li>
     <li>Chỉ dùng dữ liệu dựng trong track hoặc dữ liệu giả tự sinh: không số tài khoản, số thẻ, OTP, thông tin sức khoẻ, đơn hàng thật.</li>
